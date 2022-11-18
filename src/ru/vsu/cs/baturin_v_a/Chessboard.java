@@ -116,7 +116,7 @@ public class Chessboard {
         return true;
     }
 
-    private void updateScore() {
+    private void checkWin() {
         if (chessboard[destRow][destCol] == null) {
             return;
         } else if (chessboard[destRow][destCol].equals(bKing)) {
@@ -159,7 +159,7 @@ public class Chessboard {
         destCol = components[2].charAt(0) - 'a';
 
         if (moveValid()) {
-            updateScore();
+            checkWin();
             chessboard[destRow][destCol] = chessboard[srcRow][srcCol];
             chessboard[srcRow][srcCol] = null;
             whitesTurnToMove = !whitesTurnToMove;
